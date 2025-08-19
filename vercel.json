@@ -1,0 +1,18 @@
+{
+    "version":2,
+    "functions":{
+        "api/*js":{
+            "includeFiles":"**/*.json"
+        
+        }
+    },
+    "routes":[
+        {
+            "src":"/api/(.*)",
+            "dest":"/api/$1",
+            "headers":{
+                "Content-Type":"application/json"
+            }
+        }
+    ]
+}
