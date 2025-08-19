@@ -1,4 +1,9 @@
-import movies from "../data/movies.json" assert{type:"json"}
+import path from "path";
+import { readFileSync } from "fs";
+
+const movies = JSON.parse(
+  readFileSync(path.join(process.cwd(), "data/movies.json"), "utf-8")
+);
 
 export default function handler(req,res){
     const {query}=req.query;
