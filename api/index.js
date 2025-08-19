@@ -1,11 +1,12 @@
 import path from "path";
 import { readFileSync } from "fs";
 
-const movies = JSON.parse(
-  readFileSync(path.join(process.cwd(), "data/movies.json"), "utf-8")
-);
+
 
 export default function handler(req,res){
+    const filePath = path.join(process.cwd(), "data", "movies.json");
+  const fileData = fs.readFileSync(filePath, "utf-8");
+  const movies = JSON.parse(fileData);
     const {query}=req.query;
     if(query){
      const results =  movies.filter((movie)=>{
