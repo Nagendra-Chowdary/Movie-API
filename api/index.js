@@ -1,6 +1,6 @@
 import movies from "../data/movies.json" assert{type:"json"}
 
-export default function handler(res,req){
+export default function handler(req,res){
     const {query}=req.query;
     if(query){
      const results =  movies.filter((movie)=>{
